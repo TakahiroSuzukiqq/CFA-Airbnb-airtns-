@@ -11,6 +11,8 @@
     </div>
   <% end %>
 
+
+
   <div class="field">
     <%= f.label :price %>
     <%= f.number_field :price %>
@@ -71,7 +73,19 @@
     <%= f.check_box :parties %>
   </div>
 
+  <div class="field">
+    <%#= f.label :image %>
+    <%= f.file_field :image %>
+  </div>
+
+
+
   <div class="actions">
     <%= f.submit %>
   </div>
+
+
+
+
+
 <% end %>

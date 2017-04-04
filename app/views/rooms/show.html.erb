@@ -60,5 +60,12 @@
   <%= @room.parties %>
 </p>
 
+
+
+
+<img src ="<%= @room.image %>" alt="image"> 
+<%#= image_tag(@room.image_url.to_s) %>
+<%#= image_tag(@room.image).image_url, size: "30" %>
+
 <%= link_to 'Edit', edit_room_path(@room) %> |
 <%= link_to 'Back', rooms_path %>

@@ -1,4 +1,4 @@
-<!-- <%#= image_tag(Gravatar.new("takahirosuzuki.k010@gmail.com").image_url) %>
+<!-- <%#= image_tag(Gravatar.new("taka@email.com").image_url) %>
  -->
 <h1>Rooms</h1>
 
@@ -39,6 +39,7 @@
         <td><%= link_to 'Show', room %></td>
         <td><%= link_to 'Edit', edit_room_path(room) %></td>
         <td><%= link_to 'Destroy', room, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= image_tag room.image.to_s %></td>
       </tr>
     <% end %>
   </tbody>
