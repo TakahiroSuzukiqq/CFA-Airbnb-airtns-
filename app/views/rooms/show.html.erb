@@ -1,8 +1,11 @@
+<!-- ### 300 changed btwn hash ## -->
 <p id="notice"><%= notice %></p>
 
+<%= link_to 'Book Now', new_booking_path(room_id: @room.id), class: 'btn btn-primary' %>
+
 <p>
-  <strong>Price:</strong>
-  <%= @room.price %>
+  <strong>Title:</strong>
+  <%= @room.title %>
 </p>
 
 <p>
@@ -11,13 +14,8 @@
 </p>
 
 <p>
-  <strong>Title:</strong>
-  <%= @room.title %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @room.user.email %>
+  <strong>Price:</strong>
+  <%= number_to_currency(@room.price) %> per night
 </p>
 
 <p>
@@ -26,46 +24,53 @@
 </p>
 
 <p>
-  <strong>Pets:</strong>
-  <%= @room.pets %>
-</p>
-
-<p>
-  <strong>Smoking:</strong>
-  <%= @room.smoking %>
-</p>
-
-<p>
-  <strong>Wifi:</strong>
-  <%= @room.wifi %>
-</p>
-
-<p>
-  <strong>Bathroom:</strong>
+  <strong>Bathrooms:</strong>
   <%= @room.bathroom %>
 </p>
 
 <p>
+  <strong>User:</strong>
+  <%= @room.user.email %>
+</p>
+
+<p>
+  <strong>Pets:</strong>
+  <%= yes_no(@room.pets) %>
+</p>
+
+<p>
+  <strong>Smoking:</strong>
+  <%= yes_no(@room.smoking) %>
+</p>
+
+<p>
+  <strong>Wifi:</strong>
+  <%= yes_no(@room.wifi) %>
+</p>
+
+<p>
   <strong>Bath:</strong>
-  <%= @room.bath %>
+  <%= yes_no(@room.bath) %>
 </p>
 
 <p>
   <strong>Share:</strong>
-  <%= @room.share %>
+  <%= yes_no(@room.share) %>
 </p>
 
 <p>
   <strong>Parties:</strong>
-  <%= @room.parties %>
+  <%= yes_no(@room.parties) %>
 </p>
 
+<!-- ####### -->
 
 
-
-<img src ="<%= @room.image %>" alt="image"> 
+<img src ="<%= @room.image %>" alt="image">
 <%#= image_tag(@room.image_url.to_s) %>
 <%#= image_tag(@room.image).image_url, size: "30" %>
 
 <%= link_to 'Edit', edit_room_path(@room) %> |
-<%= link_to 'Back', rooms_path %>
+<%= link_to 'Back', rooms_path %> |
+<%= link_to 'Home', root_path %> |
+<%= link_to 'Room', room_path %>

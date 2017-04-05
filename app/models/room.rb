@@ -1,5 +1,7 @@
 class Room < ApplicationRecord
   belongs_to :user
+  has_many :bookings #77 added
+
     mount_uploader :image, ImageUploader
   serialize :images, JSON
     # def product_params
