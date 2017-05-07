@@ -1,8 +1,6 @@
 <!-- ### 300 changed btwn hash ## -->
 <p id="notice"><%= notice %></p>
 
-<%= link_to 'Book Now', new_booking_path(room_id: @room.id), class: 'btn btn-primary' %>
-
 <p>
   <strong>Title:</strong>
   <%= @room.title %>
@@ -64,11 +62,15 @@
 </p>
 
 <!-- ####### -->
+<p>
+  <strong>Image:</strong>
+  <img src ="<%= @room.image %>" alt="Image">
+  <br>
+</p>
+<%= @room.image.inspect %><br>
 
-
-<img src ="<%= @room.image %>" alt="image">
-<%#= image_tag(@room.image_url.to_s) %>
-<%#= image_tag(@room.image).image_url, size: "30" %>
+<%= link_to 'Book Now', new_booking_path(room_id: @room.id), class: 'btn btn-primary' %>
+<br>
 
 <%= link_to 'Edit', edit_room_path(@room) %> |
 <%= link_to 'Back', rooms_path %> |

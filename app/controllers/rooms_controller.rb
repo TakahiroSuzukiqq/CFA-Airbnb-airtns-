@@ -1,4 +1,4 @@
-class RoomsController < ApplicationController  #44 not changed anything
+class RoomsController < ApplicationController
   before_action :set_room, only: [:show, :edit, :update, :destroy]
 
   # GET /rooms
@@ -25,7 +25,8 @@ class RoomsController < ApplicationController  #44 not changed anything
   # POST /rooms.json
   def create
     @room = Room.new(room_params)
-    @room.user_id =current_user.id if current_user
+    @room.user_id = current_user.id
+
     respond_to do |format|
       if @room.save
         format.html { redirect_to @room, notice: 'Room was successfully created.' }
@@ -69,6 +70,6 @@ class RoomsController < ApplicationController  #44 not changed anything
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def room_params
-      params.require(:room).permit(:price, :description, :title, :user_id, :capacity, :pets, :smoking, :wifi, :bathroom, :bath, :share, :parties, :image)
+      params.require(:room).permit(:title, :description, :price, :capacity, :bathrooms, :user_id, :pets, :smoking, :wifi, :bath, :share, :parties, {image: []})
     end
 end
